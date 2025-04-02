@@ -23,7 +23,6 @@ return new class extends Migration
             $table->text('features');
             $table->timestamps();
             $table->softDeletes();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

@@ -41,7 +41,7 @@ class MeetingRoomSeeder extends Seeder
         ];
 
         foreach($rooms as $room) {
-            DB::table('meeting_rooms')->update([
+            MeetingRoom::AddUpdateData([
                 'name' => $room['name']
             ], $room);
         }

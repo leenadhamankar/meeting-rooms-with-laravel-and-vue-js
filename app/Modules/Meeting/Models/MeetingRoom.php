@@ -11,4 +11,22 @@ class MeetingRoom extends Model
 
     protected $table = 'meeting_rooms';
 
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+    
+    /**
+     * Add or update data
+     */
+    public static function AddUpdateData($where, $update) {
+        return self::firstOrCreate($where, $update); 
+    }
+
 }

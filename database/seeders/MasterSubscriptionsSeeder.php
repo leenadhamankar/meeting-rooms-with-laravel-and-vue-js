@@ -52,7 +52,7 @@ class MasterSubscriptionsSeeder extends Seeder
         ];
 
         foreach($plans as $plan) {
-            MasterSubscription::update([
+            MasterSubscription::AddUpdateData([
                 'name' => $plan['name']
             ], $plan);
         }

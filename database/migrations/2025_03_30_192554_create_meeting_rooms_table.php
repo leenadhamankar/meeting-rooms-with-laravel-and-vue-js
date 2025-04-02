@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('meeting_rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('capacity');
             $table->timestamps();
             $table->softDeletes();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

@@ -10,4 +10,11 @@ class MasterSubscription extends Model
     use HasFactory;
 
     protected $table = 'master_subscriptions';
+
+    /**
+     * Add or update data
+     */
+    public static function AddUpdateData($where, $update) {
+        return self::firstOrCreate($where, $update); 
+    }
 }

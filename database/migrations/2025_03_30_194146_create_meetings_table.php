@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
-            $table->string('meeting_name');
+            $table->string('name');
             $table->unsignedBigInteger('user_id'); // Foreign key
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->dateTime('start_at');
@@ -24,7 +24,6 @@ return new class extends Migration
             $table->foreign('meeting_room_id')->references('id')->on('meeting_rooms')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

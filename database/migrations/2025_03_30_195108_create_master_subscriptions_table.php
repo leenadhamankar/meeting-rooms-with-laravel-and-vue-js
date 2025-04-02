@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('master_subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->text('features');
             $table->timestamps();
             $table->softDeletes();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
